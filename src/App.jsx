@@ -7,13 +7,16 @@ function App() {
   const [isPlaying, setIsPlaying] = React.useState(false);
   const q = gsap.utils.selector(el);
   const tlPlay = React.useRef();
+  const tlPause = React.useRef();
 
   const handleClick = () => {
     if (!isPlaying) {
-      tlPlay.current.resume();
+      tlPause.current.pause();
+      tlPlay.current.restart();
       setIsPlaying(true);
     } else {
       tlPlay.current.pause();
+      tlPause.current.restart();
       setIsPlaying(false);
     }
   };
@@ -31,6 +34,11 @@ function App() {
         repeat: -1,
         ease: 'linear',
       })
+      .pause();
+
+    tlPause.current = gsap
+      .timeline()
+      .to(q('.bar'), { duration: 1.5, rotation: 0 })
       .pause();
   }, []);
 
