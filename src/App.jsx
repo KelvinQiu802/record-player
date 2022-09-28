@@ -27,7 +27,7 @@ function App() {
 
     tlPlay.current = gsap
       .timeline()
-      .to(q('.bar'), { duration: 1.5, rotation: 30 })
+      .to(q('.bar'), { duration: 1, rotation: 30 })
       .to(q('.disk'), {
         duration: 2,
         rotation: 360,
@@ -38,7 +38,7 @@ function App() {
 
     tlPause.current = gsap
       .timeline()
-      .to(q('.bar'), { duration: 1.5, rotation: 0 })
+      .to(q('.bar'), { duration: 1, rotation: 0 })
       .pause();
   }, []);
 
