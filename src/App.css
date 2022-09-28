@@ -1,5 +1,6 @@
 .App {
   display: flex;
+  flex-direction: column;
   height: 100vh;
   justify-content: center;
   align-items: center;
@@ -8,4 +9,13 @@
 .svg {
   position: absolute;
   scale: 0.6;
+}
+
+.btn {
+  margin-top: 650px;
+  z-index: 1000;
+}
+
+.background {
+  border-radius: 50px;
 }
